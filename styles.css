@@ -164,3 +164,20 @@ h3 { font-size: clamp(1.3rem, 3vw, 2.25rem); letter-spacing: -.04em; }
   from { opacity: .45; translate: 0 18px; }
   to { opacity: 1; translate: 0 0; }
 }
+
+.about { align-items: center; grid-template-columns: minmax(0, 19rem) minmax(0, 1fr); gap: clamp(1.4rem, 6vw, 5rem); }
+.about h2 { margin-bottom: 1rem; }
+.portrait { display: block; width: 100%; max-width: 19rem; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 46%; border-radius: .9rem; border: 1px solid var(--line); }
+.credentials { margin-block: clamp(3rem, 8vw, 6rem); }
+.credential-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.4rem; }
+.credential { padding: .65rem; }
+.certificate-image { display: block; border-radius: .45rem; background: white; }
+.certificate-image img { display: block; width: 100%; height: auto; border-radius: inherit; }
+.certificate-image:focus-visible { outline-offset: 2px; }
+.credential-copy { padding: 1rem .55rem .45rem; }
+.credential h3 { font: 700 1.08rem/1.35 Inter, system-ui, sans-serif; letter-spacing: normal; }
+.credential p { font-size: .87rem; margin: .45rem 0 0; }
+@media (max-width: 740px) {
+  .about, .credential-grid { grid-template-columns: 1fr; }
+  .credential-grid { max-width: 32rem; }
+}
