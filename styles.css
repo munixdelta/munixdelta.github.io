@@ -173,3 +173,12 @@ h3 { font-size: clamp(1.3rem, 3vw, 2.25rem); letter-spacing: -.04em; }
   .about, .credential-grid { grid-template-columns: 1fr; }
   .credential-grid { max-width: 32rem; }
 }
+
+.project-preview {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: .25rem 0 1rem;
+  border: 1px solid var(--line);
+  border-radius: .55rem;
+}
