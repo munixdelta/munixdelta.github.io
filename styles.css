@@ -272,3 +272,18 @@ body { isolation: isolate; }
 @media (max-width: 620px) {
   .project-grid, .credential-grid, .skill-row { grid-template-columns: 1fr; }
 }
+
+.project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.project-grid .featured {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  overflow: hidden;
+  align-items: center;
+  padding: 0;
+}
+.featured .project-media { align-self: stretch; display: grid; align-items: center; border-bottom: 0; }
+.featured .project-preview { aspect-ratio: auto; }
+.featured-copy { padding: clamp(1.2rem, 3.5vw, 2.7rem); }
+@media (max-width: 620px) {
+  .project-grid, .project-grid .featured { grid-template-columns: 1fr; }
+}
