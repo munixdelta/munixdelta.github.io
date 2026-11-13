@@ -232,3 +232,43 @@ body { isolation: isolate; }
 .video-toggle { align-self: flex-start; margin: 0 0 .8rem; padding: .32rem .72rem; border: 1px solid var(--line); border-radius: .35rem; background: var(--panel); color: var(--ink); font: inherit; cursor: pointer; }
 .video-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 @media (max-width: 620px) { .contact { grid-template-columns: 1fr; } }
+
+.project-grid, .credential-grid { gap: clamp(.85rem, 2vw, 1.6rem); }
+.project-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.project-card, .credential {
+  overflow: hidden;
+  padding: 0;
+  border-color: #353347;
+  background: linear-gradient(145deg, #171924, #0a1015 55%, #141320);
+}
+.project-copy, .credential-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: clamp(1.15rem, 2.2vw, 1.8rem);
+}
+.project-copy h3 { font-size: clamp(1.4rem, 2.5vw, 2rem); text-transform: uppercase; }
+.project-copy > a:last-child, .project-copy > .actions:last-child { margin-top: auto; padding-top: .8rem; }
+.project-copy .tags { padding-top: .7rem; border-top: 1px solid var(--line); }
+.project-media { position: relative; background: #080a10; border-bottom: 1px solid #353347; }
+.project-media .project-preview { margin: 0; border: 0; border-radius: 0; height: auto; aspect-ratio: 16 / 10; object-fit: contain; }
+.project-media .video-toggle { position: absolute; right: .45rem; bottom: .45rem; margin: 0; font-size: .72rem; }
+.credential-grid { max-width: none; }
+.credential .certificate-image { border-radius: 0; border-bottom: 1px solid #353347; }
+.credential .certificate-image img { aspect-ratio: 16 / 10; object-fit: contain; }
+.credential-copy { background: radial-gradient(ellipse at bottom right, #55418958, transparent 68%); }
+.credential-copy .credential-issuer { color: var(--accent); text-transform: uppercase; letter-spacing: .14em; margin: 0 0 .7rem; font-size: .72rem; }
+.credential h3 { font: 700 clamp(1.2rem, 2vw, 1.55rem)/1.22 'Bricolage Grotesque', system-ui, sans-serif; }
+.credential-copy > a { margin-top: .55rem; }
+.credential-action { border-top: 1px solid var(--line); padding-top: .75rem; margin-top: auto; text-transform: uppercase; letter-spacing: .08em; font-size: .76rem; text-decoration: none; }
+.skills { background: radial-gradient(ellipse at 78% 14%, #171327, transparent 64%), #050609; }
+.skill-row { grid-template-columns: minmax(0, 1fr) minmax(0, 2.1fr); padding-block: clamp(1.6rem, 4vw, 3.2rem); }
+.skill-row h3 { text-transform: uppercase; }
+.skill-row li { border: 0; background: transparent; padding: 0; }
+.skill-row li + li::before { content: "·"; margin-inline: .25rem .8rem; color: #a894e5; }
+@media (max-width: 950px) {
+  .project-grid, .credential-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+  .project-grid, .credential-grid, .skill-row { grid-template-columns: 1fr; }
+}

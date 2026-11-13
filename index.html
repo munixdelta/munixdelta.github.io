@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Suraj Kumar’s portfolio of computer vision and agentic AI projects.">
 <title>Suraj Kumar · Applied AI Portfolio</title>
-<link rel="stylesheet" href="styles.css?v=contact-motion">
+<link rel="stylesheet" href="styles.css?v=showcase">
 <script src="motion.js?v=contact-motion" defer></script>
 <script src="smoke.js" defer></script>
 </head>
@@ -27,7 +27,7 @@
   </section>
   <section id="work" aria-labelledby="work-title">
     <div class="section-head"><h2 id="work-title">Selected projects</h2><a href="https://github.com/munixdelta?tab=repositories">All repositories ↗</a></div>
-    <div class="grid">
+    <div class="grid project-grid">
       <article class="card featured">
         <div>
           <p class="label">Main project · Computer vision</p>
@@ -37,30 +37,38 @@
           <div class="actions"><a href="https://github.com/UtkarshSingh368/Medical_Counterfiet_Detection/tree/main/counterfeit_auth-main">Project repository ↗</a></div>
         </div>
       </article>
-      <article class="card">
-        <video id="urban-demo" class="project-preview" muted loop playsinline preload="none" poster="assets/urban-spice-preview.png" aria-label="Urban Spice website walkthrough"><source src="assets/urban-spice-walkthrough.mp4" type="video/mp4"><a href="assets/urban-spice-walkthrough.mp4">Open the walkthrough video</a></video>
-        <button class="video-toggle" type="button" aria-controls="urban-demo" hidden>Play walkthrough</button>
+      <article class="card project-card">
+        <div class="project-media"><video id="urban-demo" class="project-preview" muted loop playsinline preload="none" poster="assets/urban-spice-preview.png" aria-label="Urban Spice website walkthrough"><source src="assets/urban-spice-walkthrough.mp4" type="video/mp4"><a href="assets/urban-spice-walkthrough.mp4">Open the walkthrough video</a></video>
+        <button class="video-toggle" type="button" aria-controls="urban-demo" hidden>Play walkthrough</button></div>
+        <div class="project-copy">
         <p class="label">Client website · Events &amp; catering</p>
         <h3>Urban Spice Events &amp; Catering</h3>
         <p>A live website for a Bangalore catering business. Visitors can explore services, menus, and event photos, then request a quote or make an enquiry on WhatsApp.</p>
         <div class="actions"><a href="https://www.urbanspiceevents.com/">Visit live website ↗</a><a href="https://github.com/munixdelta/Urban-Spice-Website">View source on GitHub ↗</a></div>
+        </div>
       </article>
-      <article class="card">
+      <article class="card project-card">
+        <div class="project-copy">
         <p class="label">Civic technology</p>
         <h3>CVKI</h3>
         <p>Civic Visual Knowledge Intelligence brings together citizen photos, GPS, and local-language reports to flag potential hazards and prepare cases for human review.</p>
         <ul class="tags" aria-label="Technologies"><li>YOLOv8</li><li>FastAPI</li><li>MongoDB</li></ul>
         <a href="https://github.com/munixdelta/C-V-K-I_FULL">View CVKI repository ↗</a>
+        </div>
       </article>
-      <article class="card">
+      <article class="card project-card">
+        <div class="project-media"><img class="project-preview" src="assets/pedestrian-detection.png" alt="Traffic camera demo with detected cars, pedestrians, and marked crosswalk risk zones" width="502" height="418" loading="lazy"></div>
+        <div class="project-copy">
         <p class="label">Traffic safety</p>
         <h3>Pedestrian &amp; Vehicle Safety</h3>
         <p>A computer vision pipeline for pedestrian detection, vehicle tracking, and risk analysis, with results displayed in a FastAPI dashboard.</p>
         <ul class="tags" aria-label="Technologies"><li>YOLOv8</li><li>ByteTrack</li><li>FastAPI</li></ul>
-        <img class="project-preview" src="assets/pedestrian-detection.png" alt="Traffic camera demo with detected cars, pedestrians, and marked crosswalk risk zones" width="502" height="418" loading="lazy">
+
         <a href="https://github.com/munixdelta/pedestrian-vehicle-safety-system">View traffic safety repository ↗</a>
+        </div>
       </article>
-      <article class="card">
+      <article class="card project-card">
+        <div class="project-copy">
         <p class="label">Agentic AI / RAG</p>
         <h3>Agentic AI in Trial</h3>
         <p>A day-by-day Python lab for hybrid PDF retrieval, model tool calls, and persistent agent memory.</p>
@@ -70,8 +78,10 @@
           <li><a href="https://github.com/munixdelta/AGENTIC_AI_IN_TRIAL/blob/main/Day21-2.py">JSON-based agent memory ↗</a></li>
         </ul>
         <a href="https://github.com/munixdelta/AGENTIC_AI_IN_TRIAL">View Agentic AI repository ↗</a>
+        </div>
       </article>
-      <article class="card">
+      <article class="card project-card">
+        <div class="project-copy">
         <p class="label">Data structures / Algorithms</p>
         <h3>LeetCode Logs</h3>
         <p>C++ problem-solving practice with statements and solutions organized by problem. Browse examples for binary search, sliding windows, and tree traversal.</p>
@@ -80,6 +90,7 @@
           <li><a href="https://github.com/munixdelta/LEETCODE_LOGS/tree/main/0076-minimum-window-substring">Minimum Window Substring ↗</a></li>
         </ul>
         <a href="https://github.com/munixdelta/LEETCODE_LOGS">View LeetCode Logs ↗</a>
+        </div>
       </article>
     </div>
   </section>
@@ -141,8 +152,10 @@
           <img src="assets/aws-solutions-architect.png" alt="" width="1386" height="1071" loading="lazy">
         </a>
         <div class="credential-copy">
+          <p class="credential-issuer">Amazon Web Services</p>
           <h3>AWS Certified Solutions Architect – Associate</h3>
-          <p>Amazon Web Services · April 2026</p>
+          <p>Issued · April 2026</p>
+          <a class="credential-action" href="assets/aws-solutions-architect.png">View certificate ↗</a>
         </div>
       </article>
       <article class="card credential">
@@ -150,8 +163,10 @@
           <img src="assets/aws-ai-practitioner.png" alt="" width="1386" height="1071" loading="lazy">
         </a>
         <div class="credential-copy">
+          <p class="credential-issuer">Amazon Web Services</p>
           <h3>AWS Certified AI Practitioner</h3>
-          <p>Amazon Web Services · March 2026</p>
+          <p>Issued · March 2026</p>
+          <a class="credential-action" href="assets/aws-ai-practitioner.png">View certificate ↗</a>
         </div>
       </article>
       <article class="card credential">
@@ -159,8 +174,10 @@
           <img src="assets/aws-cloud-practitioner.png" alt="" width="1386" height="1071" loading="lazy">
         </a>
         <div class="credential-copy">
+          <p class="credential-issuer">Amazon Web Services</p>
           <h3>AWS Certified Cloud Practitioner</h3>
-          <p>Amazon Web Services · December 2025</p>
+          <p>Issued · December 2025</p>
+          <a class="credential-action" href="assets/aws-cloud-practitioner.png">View certificate ↗</a>
         </div>
       </article>
       <article class="card credential">
@@ -168,8 +185,10 @@
           <img src="assets/coursera-ai-for-everyone.png" alt="" width="1070" height="827" loading="lazy">
         </a>
         <div class="credential-copy">
+          <p class="credential-issuer">DeepLearning.AI via Coursera</p>
           <h3>AI For Everyone</h3>
-          <p>DeepLearning.AI via Coursera · March 2025</p>
+          <p>Issued · March 2025</p>
+          <a class="credential-action" href="assets/coursera-ai-for-everyone.png">View certificate ↗</a>
           <a href="https://coursera.org/verify/HRCJCCSH06O7">Verify on Coursera ↗</a>
         </div>
       </article>
@@ -178,8 +197,10 @@
           <img src="assets/nptel-social-networks.png" alt="" width="831" height="580" loading="lazy">
         </a>
         <div class="credential-copy">
+          <p class="credential-issuer">IIT Madras via NPTEL</p>
           <h3>Social Networks</h3>
-          <p>IIT Madras via NPTEL · July–October 2025</p>
+          <p>Issued · July–October 2025</p>
+          <a class="credential-action" href="assets/nptel-social-networks.png">View certificate ↗</a>
         </div>
       </article>
     </div>
