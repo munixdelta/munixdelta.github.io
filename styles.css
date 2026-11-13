@@ -300,7 +300,7 @@ body { isolation: isolate; }
 .hero h1 span { display: block; }
 .hero .lead { margin-inline: auto; }
 .hero .actions { justify-content: center; }
-.optics { inset-inline: calc(50% - 50vw); background: radial-gradient(ellipse, #211839, transparent 68%); }
+.optics { inset-inline: calc(-1 * clamp(.5rem, 2vw, 1.5rem)); background: radial-gradient(ellipse, #211839, transparent 68%); }
 .optics::before { opacity: .35; }
 .about { display: grid; align-items: center; grid-template-columns: minmax(0, .8fr) minmax(0, 1.25fr); gap: clamp(1.3rem, 7vw, 6rem); padding-block: clamp(1rem, 5vw, 4rem); }
 .about .primary { display: inline-block; }
@@ -313,6 +313,7 @@ body { isolation: isolate; }
   mask-image: linear-gradient(transparent, black 14%, transparent 69%);
 }
 #certifications::before { background: radial-gradient(ellipse at 10% 33%, #49356555, transparent 48%), radial-gradient(ellipse at 80% 50%, #28285665, transparent 55%); }
+#work { overflow: clip; }
 #work .section-head { display: grid; justify-content: center; text-align: center; margin-bottom: 2.1rem; }
 #work h2, #cert-title { text-transform: uppercase; font-size: clamp(2.1rem, 6vw, 5rem); }
 #work h2 span, #cert-title span { color: #a9d7ef; background: linear-gradient(105deg, #beabff, #69d9e1); background-clip: text; -webkit-text-fill-color: transparent; }
