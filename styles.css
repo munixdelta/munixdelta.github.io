@@ -226,7 +226,7 @@ body { isolation: isolate; }
 .contact-links li:first-child { border-top: 1px solid var(--line); }
 .contact-links a { display: flex; justify-content: space-between; padding: .8rem .25rem; text-decoration: none; }
 .contact-links a:hover { background: #88e8d80e; }
-.skills { width: min(100vw, calc(100% + 2rem)); margin-inline: auto; background: radial-gradient(ellipse at 72% 25%, #17152d, transparent 67%), #080a10; border-color: transparent; }
+.skills { width: 100%; margin-inline: auto; background: radial-gradient(ellipse at 72% 25%, #17152d, transparent 67%), #080a10; border-color: transparent; }
 .skill-field { mask-image: linear-gradient(transparent, black 12%, black 88%, transparent); }
 .skill-row li { background: #101926a8; }
 .video-toggle { align-self: flex-start; margin: 0 0 .8rem; padding: .32rem .72rem; border: 1px solid var(--line); border-radius: .35rem; background: var(--panel); color: var(--ink); font: inherit; cursor: pointer; }
