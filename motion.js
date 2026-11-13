@@ -99,7 +99,7 @@ if (ctx && "IntersectionObserver" in window && "ResizeObserver" in window) {
   const field = document.querySelector(".skill-field");
   const paint = field?.getContext("2d");
   if (paint && "ResizeObserver" in window && "IntersectionObserver" in window) {
-    const pixels = Array.from({ length: 150 }, () => ({
+    const pixels = Array.from({ length: 310 }, () => ({
       x: Math.random(), y: Math.random(), phase: Math.random() * Math.PI * 2,
       speed: 0.012 + Math.random() * 0.037, size: 2 + Math.random() * 4
     }));
@@ -115,8 +115,8 @@ if (ctx && "IntersectionObserver" in window && "ResizeObserver" in window) {
       paint.clearRect(0, 0, width, height);
       for (const [index, pixel] of pixels.entries()) {
         const x = (pixel.x + Math.sin(time * 0.28 + pixel.phase) * 0.02) * width;
-        const y = ((pixel.y + time * pixel.speed + progress * 0.45) % 1) * height;
-        paint.globalAlpha = 0.055 + 0.25 * (0.5 + 0.5 * Math.sin(time * 1.2 + pixel.phase));
+        const y = ((pixel.y + time * pixel.speed + progress * 0.72) % 1) * height;
+        paint.globalAlpha = 0.025 + 0.20 * (0.5 + 0.5 * Math.sin(time * 1.2 + pixel.phase));
         paint.fillStyle = (index % 3 === 0 || progress > 0.55 && index % 2 === 0) ? "#66ddd4" : "#a695ee";
         paint.fillRect(x, y, pixel.size, pixel.size * (1.5 + progress));
       }
@@ -145,5 +145,37 @@ if (ctx && "IntersectionObserver" in window && "ResizeObserver" in window) {
     }).observe(field);
     motion.addEventListener("change", syncField);
     document.addEventListener("visibilitychange", syncField);
+  }
+}
+
+{
+  const video = document.querySelector("#urban-demo");
+  const toggle = document.querySelector(".video-toggle");
+  if (video && toggle) {
+    let inView = false;
+    let playRequested = null;
+    const syncVideo = () => {
+      if (inView && !document.hidden && (playRequested ?? !motion.matches)) {
+        video.play().catch(() => { toggle.textContent = "Play walkthrough"; });
+      } else {
+        video.pause();
+      }
+    };
+    toggle.hidden = false;
+    video.addEventListener("play", () => { toggle.textContent = "Pause walkthrough"; });
+    video.addEventListener("pause", () => { toggle.textContent = "Play walkthrough"; });
+    toggle.addEventListener("click", () => {
+      playRequested = video.paused;
+      if (playRequested) video.play().catch(() => {});
+      else video.pause();
+    });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(([entry]) => {
+        inView = entry.isIntersecting;
+        syncVideo();
+      }, { threshold: 0.25 }).observe(video);
+    }
+    document.addEventListener("visibilitychange", syncVideo);
+    motion.addEventListener("change", syncVideo);
   }
 }

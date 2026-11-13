@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Suraj Kumar’s portfolio of computer vision and agentic AI projects.">
 <title>Suraj Kumar · Applied AI Portfolio</title>
-<link rel="stylesheet" href="styles.css?v=skill-field">
-<script src="motion.js?v=skill-field" defer></script>
+<link rel="stylesheet" href="styles.css?v=contact-motion">
+<script src="motion.js?v=contact-motion" defer></script>
 <script src="smoke.js" defer></script>
 </head>
 <body>
@@ -38,7 +38,8 @@
         </div>
       </article>
       <article class="card">
-        <video class="project-preview" controls playsinline preload="none" poster="assets/urban-spice-preview.png" aria-label="Urban Spice website walkthrough"><source src="assets/urban-spice-walkthrough.mp4" type="video/mp4"><a href="assets/urban-spice-walkthrough.mp4">Open the walkthrough video</a></video>
+        <video id="urban-demo" class="project-preview" muted loop playsinline preload="none" poster="assets/urban-spice-preview.png" aria-label="Urban Spice website walkthrough"><source src="assets/urban-spice-walkthrough.mp4" type="video/mp4"><a href="assets/urban-spice-walkthrough.mp4">Open the walkthrough video</a></video>
+        <button class="video-toggle" type="button" aria-controls="urban-demo" hidden>Play walkthrough</button>
         <p class="label">Client website · Events &amp; catering</p>
         <h3>Urban Spice Events &amp; Catering</h3>
         <p>A live website for a Bangalore catering business. Visitors can explore services, menus, and event photos, then request a quote or make an enquiry on WhatsApp.</p>
@@ -174,7 +175,20 @@
       </article>
     </div>
   </section>
-<section id="contact" class="contact" aria-labelledby="contact-title"><h2 id="contact-title">Get in touch</h2><div class="actions"><a href="mailto:kumar009954@gmail.com">kumar009954@gmail.com ↗</a><a href="https://www.linkedin.com/in/suraj-kumar-44296b352/">LinkedIn ↗</a><a href="https://github.com/munixdelta">GitHub ↗</a><a href="https://leetcode.com/u/SurajxYoddha/">LeetCode ↗</a></div></section></main>
+  <section id="contact" class="contact" aria-labelledby="contact-title">
+    <div class="contact-main">
+      <h2 id="contact-title">Let’s get in touch.</h2>
+      <p>For project ideas, collaborations, or roles in applied AI.</p>
+      <a class="primary" href="mailto:kumar009954@gmail.com">Email me ↗</a>
+      <span class="contact-email">kumar009954@gmail.com</span>
+    </div>
+    <ul class="contact-links" aria-label="Social profiles">
+      <li><a href="https://www.linkedin.com/in/suraj-kumar-44296b352/">LinkedIn <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://github.com/munixdelta">GitHub <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://www.instagram.com/munixdelta/">Instagram <span aria-hidden="true">↗</span></a></li>
+      <li><a href="https://leetcode.com/u/SurajxYoddha/">LeetCode <span aria-hidden="true">↗</span></a></li>
+    </ul>
+  </section></main>
 <footer class="wrap">Suraj Kumar <a href="#main">Back to top ↑</a></footer>
 </body>
 </html>
