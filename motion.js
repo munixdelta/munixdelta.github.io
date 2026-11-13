@@ -12,7 +12,7 @@ if ("IntersectionObserver" in window) {
     }
   }, { threshold: 0.12 });
 
-  document.querySelectorAll(".card, .skill-grid > div, .about, .contact").forEach(
+  document.querySelectorAll(".card, .skill-row, .about, .contact").forEach(
     element => reveals.observe(element)
   );
 }
@@ -93,4 +93,57 @@ if (ctx && "IntersectionObserver" in window && "ResizeObserver" in window) {
   });
   motion.addEventListener("change", sync);
   document.addEventListener("visibilitychange", sync);
+}
+
+{
+  const field = document.querySelector(".skill-field");
+  const paint = field?.getContext("2d");
+  if (paint && "ResizeObserver" in window && "IntersectionObserver" in window) {
+    const pixels = Array.from({ length: 150 }, () => ({
+      x: Math.random(), y: Math.random(), phase: Math.random() * Math.PI * 2,
+      speed: 0.012 + Math.random() * 0.037, size: 2 + Math.random() * 4
+    }));
+    let width = 0;
+    let height = 0;
+    let frame = 0;
+    let visible = false;
+
+    function renderField(now) {
+      const bounds = field.getBoundingClientRect();
+      const progress = Math.max(0, Math.min(1, (innerHeight - bounds.top) / (innerHeight + height)));
+      const time = now / 1000;
+      paint.clearRect(0, 0, width, height);
+      for (const [index, pixel] of pixels.entries()) {
+        const x = (pixel.x + Math.sin(time * 0.28 + pixel.phase) * 0.02) * width;
+        const y = ((pixel.y + time * pixel.speed + progress * 0.45) % 1) * height;
+        paint.globalAlpha = 0.055 + 0.25 * (0.5 + 0.5 * Math.sin(time * 1.2 + pixel.phase));
+        paint.fillStyle = (index % 3 === 0 || progress > 0.55 && index % 2 === 0) ? "#66ddd4" : "#a695ee";
+        paint.fillRect(x, y, pixel.size, pixel.size * (1.5 + progress));
+      }
+      frame = requestAnimationFrame(renderField);
+    }
+
+    function syncField() {
+      if (visible && !motion.matches && !document.hidden) {
+        if (!frame) frame = requestAnimationFrame(renderField);
+      } else {
+        cancelAnimationFrame(frame);
+        frame = 0;
+      }
+    }
+
+    new ResizeObserver(([entry]) => {
+      ({ width, height } = entry.contentRect);
+      const ratio = Math.min(devicePixelRatio || 1, 1.5);
+      field.width = Math.round(width * ratio);
+      field.height = Math.round(height * ratio);
+      paint.setTransform(ratio, 0, 0, ratio, 0, 0);
+    }).observe(field);
+    new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      syncField();
+    }).observe(field);
+    motion.addEventListener("change", syncField);
+    document.addEventListener("visibilitychange", syncField);
+  }
 }
