@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Suraj Kumar’s portfolio of computer vision and agentic AI projects.">
 <title>Suraj Kumar · Applied AI Portfolio</title>
-<link rel="stylesheet" href="styles.css?v=project-order">
-<script src="motion.js?v=contact-motion" defer></script>
+<link rel="stylesheet" href="styles.css?v=reference-layout">
+<script src="motion.js?v=reference-layout" defer></script>
 <script src="smoke.js" defer></script>
 </head>
 <body>
@@ -14,75 +14,23 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="wrap masthead">
   <a class="wordmark" href="#main">Suraj Kumar<span>.</span></a>
-  <nav aria-label="Main"><a href="#main">Home</a><a href="#work">Projects</a><a href="#skills">Skills</a><a href="#about">About</a><a href="#internship">Internship</a><a href="#certifications">Certifications</a><a href="#contact">Contact</a></nav>
+  <nav aria-label="Main"><a href="#main">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#certifications">Certifications</a><a href="#work">Projects</a><a href="#internship">Internship</a><a href="#contact">Contact</a></nav>
 </header>
 <main id="main" class="wrap">
   <section class="hero" aria-labelledby="title">
-    <div class="optics" aria-hidden="true"><canvas></canvas><i></i><i></i><i></i></div>
+    <div class="optics" aria-hidden="true"><canvas></canvas></div>
     <div class="hero-copy"><p class="label">CSE–AI student · KIET, Ghaziabad</p>
-    <h1 id="title">Suraj Kumar</h1><p class="hero-role">Computer vision <em>&amp;</em> applied AI</p>
+    <h1 id="title">Suraj <span>Kumar</span></h1><p class="hero-role">Computer vision <em>&amp;</em> applied AI</p>
     <p class="lead">I build computer vision systems and explore how language models retrieve evidence, call tools, and use memory.</p>
     <div class="actions"><a class="primary" href="#work">Explore projects ↓</a><a href="https://www.linkedin.com/in/suraj-kumar-44296b352/">LinkedIn ↗</a></div></div>
-    <img class="portrait" src="assets/suraj-portrait.png" alt="Portrait of Suraj Kumar" fetchpriority="high">
   </section>
-  <section id="work" aria-labelledby="work-title">
-    <div class="section-head"><h2 id="work-title">Selected projects</h2><a href="https://github.com/munixdelta?tab=repositories">All repositories ↗</a></div>
-    <div class="grid project-grid">
-      <article class="card featured">
-        <div class="project-media"><img class="project-preview" src="assets/medical-sample.jpg" alt="Medicine blister pack from the project dataset" loading="lazy"></div>
-        <div class="featured-copy">
-          <p class="label">Main project · Computer vision</p>
-          <h3>Medical Counterfeit Detection</h3>
-          <p>An image-based research project exploring counterfeit medical product detection. The repository covers image cropping and feature extraction, YOLO and Vision Transformer training, inference, and evaluation.</p>
-          <dl class="pipeline"><div><dt>Prepare</dt><dd>Image crops and feature extraction</dd></div><div><dt>Train</dt><dd>YOLO and Vision Transformer</dd></div><div><dt>Evaluate</dt><dd>Confusion matrix and precision–recall curves</dd></div></dl>
-          <div class="actions"><a href="https://github.com/UtkarshSingh368/Medical_Counterfiet_Detection/tree/main/counterfeit_auth-main">Project repository ↗</a></div>
-        </div>
-      </article>
-      <article class="card project-card">
-        <div class="project-media"><img class="project-preview" src="assets/cvki-workflow.png" alt="CVKI workflow diagram from citizen report through hazard triage to human review" loading="lazy"></div>
-        <div class="project-copy">
-        <p class="label">Civic technology</p>
-        <h3>CVKI</h3>
-        <p>Civic Visual Knowledge Intelligence brings together citizen photos, GPS, and local-language reports to flag potential hazards and prepare cases for human review.</p>
-        <ul class="tags" aria-label="Technologies"><li>YOLOv8</li><li>FastAPI</li><li>MongoDB</li></ul>
-        <a href="https://github.com/munixdelta/C-V-K-I_FULL">View CVKI repository ↗</a>
-        </div>
-      </article>
-      <article class="card project-card">
-        <div class="project-media"><img class="project-preview" src="assets/pedestrian-detection.png" alt="Traffic camera demo with detected cars, pedestrians, and marked crosswalk risk zones" width="502" height="418" loading="lazy"></div>
-        <div class="project-copy">
-        <p class="label">Traffic safety</p>
-        <h3>Pedestrian &amp; Vehicle Safety</h3>
-        <p>A computer vision pipeline for pedestrian detection, vehicle tracking, and risk analysis, with results displayed in a FastAPI dashboard.</p>
-        <ul class="tags" aria-label="Technologies"><li>YOLOv8</li><li>ByteTrack</li><li>FastAPI</li></ul>
+  <section id="about" class="about" aria-labelledby="about-title">
+    <img class="portrait" src="assets/suraj-portrait.png" alt="Portrait of Suraj Kumar" loading="lazy">
 
-        <a href="https://github.com/munixdelta/pedestrian-vehicle-safety-system">View traffic safety repository ↗</a>
-        </div>
-      </article>
-      <article class="card project-card">
-        <div class="project-media"><img class="project-preview" src="assets/agentic-retrieval.png" alt="Agentic AI workflow diagram showing PDF extraction, hybrid retrieval, and reranking" loading="lazy"></div>
-        <div class="project-copy">
-        <p class="label">Agentic AI / RAG</p>
-        <h3>Agentic AI in Trial</h3>
-        <p>A day-by-day Python lab for hybrid PDF retrieval, model tool calls, and persistent agent memory.</p>
-        <ul class="examples">
-          <li><a href="https://github.com/munixdelta/AGENTIC_AI_IN_TRIAL/blob/main/Day12-1.py">Hybrid PDF retrieval ↗</a></li>
-          <li><a href="https://github.com/munixdelta/AGENTIC_AI_IN_TRIAL/blob/main/Day16-1.py">Groq tool calling ↗</a></li>
-          <li><a href="https://github.com/munixdelta/AGENTIC_AI_IN_TRIAL/blob/main/Day21-2.py">JSON-based agent memory ↗</a></li>
-        </ul>
-        <a href="https://github.com/munixdelta/AGENTIC_AI_IN_TRIAL">View Agentic AI repository ↗</a>
-        </div>
-      </article>
-      <article class="card project-card">
-        <div class="project-media"><video id="urban-demo" class="project-preview" muted loop playsinline preload="none" poster="assets/urban-spice-preview.png" aria-label="Urban Spice website walkthrough"><source src="assets/urban-spice-walkthrough.mp4" type="video/mp4"><a href="assets/urban-spice-walkthrough.mp4">Open the walkthrough video</a></video>
-        <button class="video-toggle" type="button" aria-controls="urban-demo" hidden>Play walkthrough</button></div>
-        <div class="project-copy">
-        <p class="label">Client website · Events &amp; catering</p>
-        <h3>Urban Spice Events &amp; Catering</h3>
-        <p>A live website for a Bangalore catering business. Visitors can explore services, menus, and event photos, then request a quote or make an enquiry on WhatsApp.</p>
-        <div class="actions"><a href="https://www.urbanspiceevents.com/">Visit live website ↗</a><a href="https://github.com/munixdelta/Urban-Spice-Website">View source on GitHub ↗</a></div>
-        </div>
-      </article>
+    <div>
+      <h2 id="about-title">About me</h2>
+      <p>I’m a B.Tech Computer Science and Artificial Intelligence student at KIET Group of Institutions, Ghaziabad. My current interests include retrieval evaluation, citation quality in RAG, NLP, and AWS Cloud.</p>
+      <a class="primary" href="#contact">Get in touch ↓</a>
     </div>
   </section>
   <section id="skills" class="skills" aria-labelledby="skills-title">
@@ -111,32 +59,8 @@
       </div>
     </div>
   </section>
-  <section id="about" class="about" aria-labelledby="about-title">
-    <div>
-      <h2 id="about-title">About me</h2>
-      <p>I’m a B.Tech Computer Science and Artificial Intelligence student at KIET Group of Institutions, Ghaziabad. My current interests include retrieval evaluation, citation quality in RAG, NLP, and AWS Cloud.</p>
-    </div>
-  </section>
-  <section id="internship" class="credentials" aria-labelledby="internship-title">
-    <h2 id="internship-title">Internship</h2>
-    <article class="card internship-card">
-      <div>
-        <p class="label">Wheeltrix · 5 June–5 July 2026</p>
-        <h3>Data Science &amp; Analytics</h3>
-        <h4>TextSummarizer</h4>
-        <p>A document summarization app that accepts TXT, PDF, and DOCX files. It offers TF-IDF extractive summaries and DistilBART abstractive summaries, with adjustable length and ROUGE evaluation when a reference summary is supplied.</p>
-        <a href="https://github.com/munixdelta/TextSummarizer">View TextSummarizer on GitHub ↗</a>
-      </div>
-      <figure>
-        <a class="certificate-image" href="assets/wheeltrix-internship.png" aria-label="Open full Wheeltrix internship certificate">
-          <img src="assets/wheeltrix-internship.png" width="595" height="842" alt="Wheeltrix internship completion certificate for Suraj Kumar" loading="lazy">
-        </a>
-        <figcaption>Internship completion certificate</figcaption>
-      </figure>
-    </article>
-  </section>
   <section id="certifications" class="credentials" aria-labelledby="cert-title">
-    <h2 id="cert-title">Certifications</h2>
+    <h2 id="cert-title">Verified <span>credentials</span></h2>
     <div class="credential-grid">
       <article class="card credential">
         <a class="certificate-image" href="assets/aws-solutions-architect.png" aria-label="Open full AWS Certified Solutions Architect – Associate certificate">
@@ -196,6 +120,84 @@
       </article>
     </div>
   </section>
+  <section id="work" aria-labelledby="work-title">
+    <div class="section-head"><h2 id="work-title">Selected <span>projects</span></h2><a href="https://github.com/munixdelta?tab=repositories">All repositories ↗</a></div>
+    <div class="grid project-grid">
+      <article class="card featured">
+        <div class="project-media"><img class="project-preview" src="assets/medical-sample.jpg" alt="Medicine blister pack from the project dataset" loading="lazy"></div>
+        <div class="featured-copy">
+          <p class="label">Main project · Computer vision</p>
+          <h3>Medical Counterfeit Detection</h3>
+          <p>An image-based research project exploring counterfeit medical product detection. The repository covers image cropping and feature extraction, YOLO and Vision Transformer training, inference, and evaluation.</p>
+          <dl class="pipeline"><div><dt>Prepare</dt><dd>Image crops and feature extraction</dd></div><div><dt>Train</dt><dd>YOLO and Vision Transformer</dd></div><div><dt>Evaluate</dt><dd>Confusion matrix and precision–recall curves</dd></div></dl>
+          <div class="actions"><a href="https://github.com/UtkarshSingh368/Medical_Counterfiet_Detection/tree/main/counterfeit_auth-main">Project repository ↗</a></div>
+        </div>
+      </article>
+      <article class="card project-card">
+        <div class="project-media"><img class="project-preview" src="assets/cvki-workflow.png" alt="CVKI workflow diagram from citizen report through hazard triage to human review" loading="lazy"></div>
+        <div class="project-copy">
+        <p class="label">Civic technology</p>
+        <h3>CVKI</h3>
+        <p>Civic Visual Knowledge Intelligence brings together citizen photos, GPS, and local-language reports to flag potential hazards and prepare cases for human review.</p>
+        <ul class="tags" aria-label="Technologies"><li>YOLOv8</li><li>FastAPI</li><li>MongoDB</li></ul>
+        <a href="https://github.com/munixdelta/C-V-K-I_FULL">View CVKI repository ↗</a>
+        </div>
+      </article>
+      <article class="card project-card">
+        <div class="project-media"><img class="project-preview" src="assets/pedestrian-detection.png" alt="Traffic camera demo with detected cars, pedestrians, and marked crosswalk risk zones" width="502" height="418" loading="lazy"></div>
+        <div class="project-copy">
+        <p class="label">Traffic safety</p>
+        <h3>Pedestrian &amp; Vehicle Safety</h3>
+        <p>A computer vision pipeline for pedestrian detection, vehicle tracking, and risk analysis, with results displayed in a FastAPI dashboard.</p>
+        <ul class="tags" aria-label="Technologies"><li>YOLOv8</li><li>ByteTrack</li><li>FastAPI</li></ul>
+
+        <a href="https://github.com/munixdelta/pedestrian-vehicle-safety-system">View traffic safety repository ↗</a>
+        </div>
+      </article>
+      <article class="card project-card">
+        <div class="project-media"><img class="project-preview" src="assets/agentic-retrieval.png" alt="Agentic AI workflow diagram showing PDF extraction, hybrid retrieval, and reranking" loading="lazy"></div>
+        <div class="project-copy">
+        <p class="label">Agentic AI / RAG</p>
+        <h3>Agentic AI in Trial</h3>
+        <p>A day-by-day Python lab for hybrid PDF retrieval, model tool calls, and persistent agent memory.</p>
+        <ul class="examples">
+          <li><a href="https://github.com/munixdelta/AGENTIC_AI_IN_TRIAL/blob/main/Day12-1.py">Hybrid PDF retrieval ↗</a></li>
+          <li><a href="https://github.com/munixdelta/AGENTIC_AI_IN_TRIAL/blob/main/Day16-1.py">Groq tool calling ↗</a></li>
+          <li><a href="https://github.com/munixdelta/AGENTIC_AI_IN_TRIAL/blob/main/Day21-2.py">JSON-based agent memory ↗</a></li>
+        </ul>
+        <a href="https://github.com/munixdelta/AGENTIC_AI_IN_TRIAL">View Agentic AI repository ↗</a>
+        </div>
+      </article>
+      <article class="card project-card">
+        <div class="project-media"><video id="urban-demo" class="project-preview" muted loop playsinline preload="none" poster="assets/urban-spice-preview.png" aria-label="Urban Spice website walkthrough"><source src="assets/urban-spice-walkthrough.mp4" type="video/mp4"><a href="assets/urban-spice-walkthrough.mp4">Open the walkthrough video</a></video>
+        <button class="video-toggle" type="button" aria-controls="urban-demo" hidden>Play walkthrough</button></div>
+        <div class="project-copy">
+        <p class="label">Client website · Events &amp; catering</p>
+        <h3>Urban Spice Events &amp; Catering</h3>
+        <p>A live website for a Bangalore catering business. Visitors can explore services, menus, and event photos, then request a quote or make an enquiry on WhatsApp.</p>
+        <div class="actions"><a href="https://www.urbanspiceevents.com/">Visit live website ↗</a><a href="https://github.com/munixdelta/Urban-Spice-Website">View source on GitHub ↗</a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section id="internship" class="credentials" aria-labelledby="internship-title">
+    <h2 id="internship-title">Internship</h2>
+    <article class="card internship-card">
+      <div>
+        <p class="label">Wheeltrix · 5 June–5 July 2026</p>
+        <h3>Data Science &amp; Analytics</h3>
+        <h4>TextSummarizer</h4>
+        <p>A document summarization app that accepts TXT, PDF, and DOCX files. It offers TF-IDF extractive summaries and DistilBART abstractive summaries, with adjustable length and ROUGE evaluation when a reference summary is supplied.</p>
+        <a href="https://github.com/munixdelta/TextSummarizer">View TextSummarizer on GitHub ↗</a>
+      </div>
+      <figure>
+        <a class="certificate-image" href="assets/wheeltrix-internship.png" aria-label="Open full Wheeltrix internship certificate">
+          <img src="assets/wheeltrix-internship.png" width="595" height="842" alt="Wheeltrix internship completion certificate for Suraj Kumar" loading="lazy">
+        </a>
+        <figcaption>Internship completion certificate</figcaption>
+      </figure>
+    </article>
+  </section>
   <section id="contact" class="contact" aria-labelledby="contact-title">
     <div class="contact-main">
       <h2 id="contact-title">Let’s get in touch.</h2>
@@ -203,12 +205,24 @@
       <a class="primary" href="mailto:kumar009954@gmail.com">Email me ↗</a>
       <span class="contact-email">kumar009954@gmail.com</span>
     </div>
-    <ul class="contact-links" aria-label="Social profiles">
+    <div class="social-card">
+      <div class="social-front">
+        <img src="assets/suraj-portrait.png" alt="" loading="lazy">
+        <h3>Suraj Kumar</h3>
+        <p>@munixdelta</p>
+        <button type="button" class="social-toggle" aria-expanded="false" aria-controls="social-panel" hidden>Socials ↗</button>
+      </div>
+      <div id="social-panel" class="social-back">
+        <h3>Connect</h3>
+        <ul class="contact-links" aria-label="Social profiles">
       <li><a href="https://www.linkedin.com/in/suraj-kumar-44296b352/">LinkedIn <span aria-hidden="true">↗</span></a></li>
       <li><a href="https://github.com/munixdelta">GitHub <span aria-hidden="true">↗</span></a></li>
       <li><a href="https://www.instagram.com/munixdelta/">Instagram <span aria-hidden="true">↗</span></a></li>
       <li><a href="https://leetcode.com/u/SurajxYoddha/">LeetCode <span aria-hidden="true">↗</span></a></li>
-    </ul>
+        </ul>
+        <button type="button" class="social-close" hidden>Back</button>
+      </div>
+    </div>
   </section></main>
 <footer class="wrap">Suraj Kumar <a href="#main">Back to top ↑</a></footer>
 </body>

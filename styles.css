@@ -287,3 +287,54 @@ body { isolation: isolate; }
 @media (max-width: 620px) {
   .project-grid, .project-grid .featured { grid-template-columns: 1fr; }
 }
+
+:root { --bg: #050609; --accent: #83e3e5; }
+.masthead { width: max-content; max-width: calc(100% - 1rem); border-radius: 2rem; background: #0c0d13df; backdrop-filter: blur(14px); }
+.masthead .wordmark { display: none; }
+.masthead nav { justify-content: center; column-gap: clamp(.65rem, 2vw, 1.8rem); }
+.masthead nav a { text-transform: uppercase; letter-spacing: .12em; font-size: .7rem; color: var(--muted); }
+.masthead nav a:hover, .masthead nav a[aria-current] { color: var(--ink); }
+.hero { display: grid; grid-template-columns: minmax(0, 1fr); place-items: center; min-height: 85svh; text-align: center; }
+.hero-copy { min-width: 0; }
+.hero h1 { font-size: clamp(3.6rem, 13vw, 10rem); text-transform: uppercase; overflow-wrap: normal; }
+.hero h1 span { display: block; }
+.hero .lead { margin-inline: auto; }
+.hero .actions { justify-content: center; }
+.optics { inset-inline: calc(50% - 50vw); background: radial-gradient(ellipse, #211839, transparent 68%); }
+.optics::before { opacity: .35; }
+.about { display: grid; align-items: center; grid-template-columns: minmax(0, .8fr) minmax(0, 1.25fr); gap: clamp(1.3rem, 7vw, 6rem); padding-block: clamp(1rem, 5vw, 4rem); }
+.about .primary { display: inline-block; }
+#work, #certifications { position: relative; isolation: isolate; padding-block: clamp(2rem, 7vw, 5rem); }
+#work::before, #certifications::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+#work::before {
+  background: repeating-linear-gradient(90deg, transparent 0 94px, #a16ae65a 95px 96px), repeating-linear-gradient(transparent 0 68px, #a16ae65a 69px 70px), radial-gradient(ellipse at center, #4c2d63, transparent 67%);
+  transform: perspective(650px) rotateX(-35deg);
+  transform-origin: center top;
+  mask-image: linear-gradient(transparent, black 14%, transparent 69%);
+}
+#certifications::before { background: radial-gradient(ellipse at 10% 33%, #49356555, transparent 48%), radial-gradient(ellipse at 80% 50%, #28285665, transparent 55%); }
+#work .section-head { display: grid; justify-content: center; text-align: center; margin-bottom: 2.1rem; }
+#work h2, #cert-title { text-transform: uppercase; font-size: clamp(2.1rem, 6vw, 5rem); }
+#work h2 span, #cert-title span { color: #a9d7ef; background: linear-gradient(105deg, #beabff, #69d9e1); background-clip: text; -webkit-text-fill-color: transparent; }
+.contact { padding: clamp(1rem, 5vw, 4.2rem); background: transparent; border: 0; }
+.contact-main { padding: clamp(1.4rem, 4vw, 2.6rem); border: 1px solid var(--line); border-radius: 1rem; background: #080911ab; }
+.social-card { position: relative; perspective: 900px; min-width: 0; }
+.social-front, .social-back { border: 1px solid #56456d; border-radius: 1.35rem; padding: 1.4rem; background: linear-gradient(145deg, #141321, #312249); }
+.social-front img { display: block; width: 100%; height: clamp(9rem, 23vw, 16rem); object-fit: cover; object-position: center 35%; border-radius: .7rem; margin-bottom: 1rem; }
+.social-front p { color: var(--muted); margin: .45rem 0; }
+.social-card.is-ready { display: grid; }
+.social-card.is-ready > div { grid-area: 1 / 1; backface-visibility: hidden; }
+.social-card.is-ready .social-back { transform: rotateY(-180deg); }
+.social-card.is-flipped .social-front { transform: rotateY(180deg); }
+.social-card.is-flipped .social-back { transform: none; }
+.social-toggle, .social-close { color: var(--ink); background: #171529; border: 1px solid #776497; border-radius: 2rem; padding: .6rem 1rem; font: inherit; cursor: pointer; }
+.social-back ul { margin-block: 1rem; }
+.social-card button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media (prefers-reduced-motion: no-preference) {
+  .social-card.is-ready > div { transition: transform .52s cubic-bezier(.2,.65,.28,1); }
+}
+@media (max-width: 700px) {
+  .about { grid-template-columns: 1fr; }
+  .masthead nav { row-gap: .3rem; }
+  .masthead nav a { font-size: .62rem; }
+}

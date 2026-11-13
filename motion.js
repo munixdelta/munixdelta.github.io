@@ -12,17 +12,17 @@ if ("IntersectionObserver" in window) {
     }
   }, { threshold: 0.12 });
 
-  document.querySelectorAll(".card, .skill-row, .about, .contact").forEach(
+  document.querySelectorAll(".card, .skill-row, .skill-intro, .section-head, #cert-title, .about, .contact-main").forEach(
     element => reveals.observe(element)
   );
 }
 
 if (ctx && "IntersectionObserver" in window && "ResizeObserver" in window) {
-  const particles = Array.from({ length: 85 }, () => ({
+  const particles = Array.from({ length: 220 }, () => ({
     angle: Math.random() * Math.PI * 2,
     radius: 0.14 + Math.random() * 0.62,
     speed: (0.04 + Math.random() * 0.12) * (Math.random() < 0.5 ? -1 : 1),
-    size: 0.6 + Math.random() * 1.55,
+    size: 0.4 + Math.random() * 1.15,
     alpha: 0.22 + Math.random() * 0.6
   }));
 
@@ -42,7 +42,7 @@ if (ctx && "IntersectionObserver" in window && "ResizeObserver" in window) {
     offset.x += (pointer.x - offset.x) * 0.06;
     offset.y += (pointer.y - offset.y) * 0.06;
     ctx.clearRect(0, 0, width, height);
-    ctx.fillStyle = "#92ebdb";
+    ctx.fillStyle = "#e4dcff";
     for (const particle of particles) {
       const angle = particle.angle + time * particle.speed;
       const x = width / 2 + Math.cos(angle) * particle.radius * width + offset.x;
@@ -178,4 +178,47 @@ if (ctx && "IntersectionObserver" in window && "ResizeObserver" in window) {
     document.addEventListener("visibilitychange", syncVideo);
     motion.addEventListener("change", syncVideo);
   }
+}
+
+{
+  const card = document.querySelector(".social-card");
+  if (card) {
+    const front = card.querySelector(".social-front");
+    const back = card.querySelector(".social-back");
+    const open = card.querySelector(".social-toggle");
+    const close = card.querySelector(".social-close");
+    function flip(showLinks) {
+      card.classList.toggle("is-flipped", showLinks);
+      open.setAttribute("aria-expanded", String(showLinks));
+      front.inert = showLinks;
+      back.inert = !showLinks;
+      (showLinks ? back.querySelector("a") : open).focus({ preventScroll: true });
+    }
+    card.classList.add("is-ready");
+    back.inert = true;
+    open.hidden = close.hidden = false;
+    open.addEventListener("click", () => flip(true));
+    close.addEventListener("click", () => flip(false));
+    card.addEventListener("keydown", event => {
+      if (event.key === "Escape" && card.classList.contains("is-flipped")) flip(false);
+    });
+  }
+
+  const links = [...document.querySelectorAll(".masthead nav a")];
+  let scheduled = false;
+  function updateNavigation() {
+    const current = links.slice(1).filter(link => document.querySelector(link.hash).getBoundingClientRect().top <= innerHeight * .36).at(-1) ?? links[0];
+    for (const link of links) {
+      if (link === current) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    }
+    scheduled = false;
+  }
+  window.addEventListener("scroll", () => {
+    if (!scheduled) {
+      scheduled = true;
+      requestAnimationFrame(updateNavigation);
+    }
+  }, { passive: true });
+  updateNavigation();
 }
