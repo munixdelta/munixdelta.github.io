@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
   color-scheme: dark;
-  --bg: #10121a;
-  --panel: #181c27;
-  --ink: #f3f0fa;
-  --muted: #b9bfd1;
-  --line: #363b4f;
-  --accent: #c7b7ff;
+  --bg: #090d11;
+  --panel: #111920;
+  --ink: #edf5f6;
+  --muted: #aabfc7;
+  --line: #2d424c;
+  --accent: #88e8d8;
   --focus: #ffdc96;
 }
 * { box-sizing: border-box; }
 html { scroll-padding-top: 1.5rem; }
 body {
   margin: 0;
-  background: radial-gradient(ellipse at 78% 0%, #29213f 0%, transparent 48rem), var(--bg);
+  background: var(--bg);
   color: var(--ink);
   font: 1rem/1.65 Inter, system-ui, sans-serif;
 }
@@ -31,23 +31,23 @@ a:focus-visible { outline: 3px solid var(--focus); outline-offset: 5px; border-r
 nav, .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1.25rem; }
 nav a { text-decoration: none; font-size: .9rem; }
 .hero { padding-block: clamp(4rem, 10vw, 8rem) clamp(3rem, 8vw, 6rem); }
-h1, h2, h3, .hero-role { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; line-height: 1; margin: 0; }
+h1, h2, h3, .hero-role { font-family: 'Archivo Black', system-ui, sans-serif; font-weight: 400; line-height: 1; margin: 0; }
 h1 { font-size: clamp(3.4rem, 12vw, 9rem); letter-spacing: -.035em; }
 .hero-role { font-size: clamp(2rem, 6vw, 4.75rem); color: var(--accent); margin-top: .3rem; }
 h2 { font-size: clamp(2.6rem, 6vw, 4.25rem); }
 h3 { font-size: clamp(2rem, 4vw, 3.3rem); }
 .label { color: var(--accent); font-size: .74rem; font-weight: 700; text-transform: uppercase; letter-spacing: .13em; margin: 0 0 .85rem; }
 .lead { color: var(--muted); max-width: 37rem; font-size: clamp(1.05rem, 2.4vw, 1.25rem); margin: 1.35rem 0; }
-.primary { background: var(--accent); color: #181123; padding: .72rem 1.15rem; border-radius: .4rem; text-decoration: none; }
-.primary:hover { background: white; color: #181123; }
+.primary { background: var(--accent); color: #0b191a; padding: .72rem 1.15rem; border-radius: .4rem; text-decoration: none; }
+.primary:hover { background: white; color: #0b191a; }
 .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: .65rem 1rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
 .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
 .card { display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--line); border-radius: .9rem; padding: clamp(1.2rem, 3.4vw, 2.4rem); }
 .card > a:last-child { margin-top: auto; }
 .card p:not(.label), .about p { color: var(--muted); }
-.featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: clamp(1.35rem, 4vw, 3rem); background: linear-gradient(145deg, #27213a, #1a1e2a); border-color: #645481; }
+.featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: clamp(1.35rem, 4vw, 3rem); background: linear-gradient(145deg, #123030, #111920); border-color: #426e70; }
 .pipeline { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; margin: 1.3rem 0; }
-.pipeline div { padding-top: .5rem; border-top: 1px solid #8c7aaa; }
+.pipeline div { padding-top: .5rem; border-top: 1px solid #426e70; }
 .pipeline dt { color: var(--accent); font-weight: 700; }
 .pipeline dd { margin: .15rem 0 0; color: var(--muted); font-size: .84rem; }
 .tags { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; margin: 0 0 1rem; }
@@ -66,4 +66,84 @@ footer { border-top: 1px solid var(--line); font-size: .88rem; }
 @media (max-width: 380px) {
   .wrap { width: calc(100% - 2rem); }
   .pipeline { grid-template-columns: 1fr; }
+}
+
+.masthead {
+  position: sticky;
+  top: .65rem;
+  z-index: 3;
+  margin-top: .65rem;
+  padding: .7rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 1.1rem;
+  background: #090d11f2;
+}
+html { scroll-padding-top: 6.5rem; }
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 83svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+.hero h1 {
+  font-size: clamp(3.2rem, 13vw, 10.5rem);
+  text-transform: uppercase;
+  letter-spacing: -.08em;
+  padding-right: .07em;
+}
+.hero h1 span { display: block; }
+.hero-role {
+  font: 600 clamp(.9rem, 2.5vw, 1.4rem)/1.4 Inter, system-ui, sans-serif;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  margin-top: 1.25rem;
+}
+.hero-role em { font-style: normal; }
+.optics {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #16464485, transparent 68%);
+  mask-image: linear-gradient(transparent, black 20%, black 80%, transparent);
+}
+.optics::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#69b9be55 1px, transparent 1px);
+  background-size: 20px 20px;
+  mask-image: radial-gradient(ellipse, black, transparent 74%);
+}
+.optics i {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: min(69vw, 660px);
+  aspect-ratio: 1;
+  border: 1px solid #79d9d548;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.optics i:nth-child(2) { scale: .79; transform-origin: 0 0; border-style: dashed; }
+.optics i:nth-child(3) { scale: 1.18; transform-origin: 0 0; }
+h2 { font-size: clamp(1.95rem, 5vw, 3.65rem); letter-spacing: -.045em; }
+h3 { font-size: clamp(1.3rem, 3vw, 2.25rem); letter-spacing: -.04em; }
+.skills, .contact { margin-block: clamp(3rem, 8vw, 6rem); }
+.skill-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.2rem; }
+.skill-grid div { padding: 1.3rem; border-top: 2px solid var(--accent); background: var(--panel); }
+.skill-grid h3 { font-size: 1.13rem; }
+.skill-grid p { color: var(--muted); margin-bottom: 0; }
+.contact { padding: clamp(1.5rem, 5vw, 3.5rem); background: #132829; border: 1px solid #426e70; border-radius: .9rem; }
+.contact .actions { margin-top: 1rem; }
+@media (max-width: 740px) {
+  .masthead { justify-content: center; }
+  .masthead .wordmark { display: none; }
+  .masthead nav { justify-content: center; gap: .35rem .9rem; }
+  .hero { min-height: 75svh; }
+  .skill-grid { grid-template-columns: 1fr; }
 }
