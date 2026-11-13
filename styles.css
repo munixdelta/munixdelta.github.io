@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
   color-scheme: dark;
@@ -31,7 +31,7 @@ a:focus-visible { outline: 3px solid var(--focus); outline-offset: 5px; border-r
 nav, .actions { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1.25rem; }
 nav a { text-decoration: none; font-size: .9rem; }
 .hero { padding-block: clamp(4rem, 10vw, 8rem) clamp(3rem, 8vw, 6rem); }
-h1, h2, h3, .hero-role { font-family: 'Archivo Black', system-ui, sans-serif; font-weight: 400; line-height: 1; margin: 0; }
+h1, h2, h3, .hero-role { font-family: 'Bricolage Grotesque', system-ui, sans-serif; font-weight: 700; line-height: 1.08; margin: 0; }
 h1 { font-size: clamp(3.4rem, 12vw, 9rem); letter-spacing: -.035em; }
 .hero-role { font-size: clamp(2rem, 6vw, 4.75rem); color: var(--accent); margin-top: .3rem; }
 h2 { font-size: clamp(2.6rem, 6vw, 4.25rem); }
@@ -79,26 +79,21 @@ html { scroll-padding-top: 6.5rem; }
 .hero {
   position: relative;
   isolation: isolate;
-  min-height: 83svh;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, .9fr);
+  gap: clamp(1.75rem, 6vw, 5rem);
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
+  padding-block: clamp(2.8rem, 7vw, 6rem);
 }
 .hero h1 {
-  font-size: clamp(3.2rem, 13vw, 10.5rem);
-  text-transform: uppercase;
-  letter-spacing: -.08em;
-  padding-right: .07em;
+  font-size: clamp(2.8rem, 6.4vw, 6.2rem);
+  line-height: .98;
+  letter-spacing: -.065em;
+  overflow-wrap: anywhere;
 }
-.hero h1 span { display: block; }
 .hero-role {
-  font: 600 clamp(.9rem, 2.5vw, 1.4rem)/1.4 Inter, system-ui, sans-serif;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-  margin-top: 1.25rem;
+  font: 600 clamp(1.05rem, 2.4vw, 1.55rem)/1.35 Inter, system-ui, sans-serif;
+  margin-top: .9rem;
 }
 .hero-role em { font-style: normal; }
 .optics {
@@ -141,7 +136,7 @@ h3 { font-size: clamp(1.3rem, 3vw, 2.25rem); letter-spacing: -.04em; }
   .masthead { justify-content: center; }
   .masthead .wordmark { display: none; }
   .masthead nav { justify-content: center; gap: .35rem .9rem; }
-  .hero { min-height: 75svh; }
+  .hero { grid-template-columns: 1fr; }
   .skill-grid { grid-template-columns: 1fr; }
 }
 
@@ -151,10 +146,7 @@ h3 { font-size: clamp(1.3rem, 3vw, 2.25rem); letter-spacing: -.04em; }
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
   .hero > :not(.optics) { animation: arrive .8s cubic-bezier(.2,.7,.2,1) both; }
-  .hero h1 { animation-delay: .07s !important; }
-  .hero .hero-role { animation-delay: .15s !important; }
-  .hero .lead { animation-delay: .23s !important; }
-  .hero .actions { animation-delay: .3s !important; }
+  .hero .portrait { animation-delay: .12s; }
   .card { transition: border-color .2s ease, transform .25s ease; }
   .card:hover, .card:focus-within { border-color: var(--accent); }
   .card:hover { transform: translateY(-4px); }
@@ -165,9 +157,9 @@ h3 { font-size: clamp(1.3rem, 3vw, 2.25rem); letter-spacing: -.04em; }
   to { opacity: 1; translate: 0 0; }
 }
 
-.about { align-items: center; grid-template-columns: minmax(0, 19rem) minmax(0, 1fr); gap: clamp(1.4rem, 6vw, 5rem); }
+.about { display: block; }
 .about h2 { margin-bottom: 1rem; }
-.portrait { display: block; width: 100%; max-width: 19rem; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 46%; border-radius: .9rem; border: 1px solid var(--line); }
+.portrait { display: block; width: 100%; max-width: 27rem; aspect-ratio: 1; object-fit: cover; object-position: center; border-radius: 1rem; border: 1px solid var(--line); justify-self: center; }
 .credentials { margin-block: clamp(3rem, 8vw, 6rem); }
 .credential-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.4rem; }
 .credential { padding: .65rem; }
