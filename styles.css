@@ -45,7 +45,7 @@ h3 { font-size: clamp(2rem, 4vw, 3.3rem); }
 .card { display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--line); border-radius: .9rem; padding: clamp(1.2rem, 3.4vw, 2.4rem); }
 .card > a:last-child { margin-top: auto; }
 .card p:not(.label), .about p { color: var(--muted); }
-.featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: clamp(1.35rem, 4vw, 3rem); background: linear-gradient(145deg, #123030, #111920); border-color: #426e70; }
+.featured { grid-column: 1 / -1; display: block; background: linear-gradient(145deg, #123030, #111920); border-color: #426e70; }
 .pipeline { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; margin: 1.3rem 0; }
 .pipeline div { padding-top: .5rem; border-top: 1px solid #426e70; }
 .pipeline dt { color: var(--accent); font-weight: 700; }
@@ -53,14 +53,11 @@ h3 { font-size: clamp(2rem, 4vw, 3.3rem); }
 .tags { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; margin: 0 0 1rem; }
 .tags li { border: 1px solid #5b6278; border-radius: 2rem; padding: .14rem .62rem; font-size: .78rem; }
 .examples { padding-left: 1.2rem; margin-top: 0; }
-figure { margin: 0; min-width: 0; }
-figure img { display: block; width: 100%; height: auto; border-radius: .45rem; background: white; }
-figcaption { padding-top: .6rem; font-size: .8rem; color: var(--muted); }
 .about { display: grid; grid-template-columns: 1fr 1.6fr; gap: 1rem; margin-block: clamp(3rem, 8vw, 6rem); padding-top: 2rem; border-top: 1px solid var(--line); }
 .about p { margin-top: 0; max-width: 36rem; }
 footer { border-top: 1px solid var(--line); font-size: .88rem; }
 @media (max-width: 740px) {
-  .grid, .featured, .about { grid-template-columns: 1fr; }
+  .grid, .about { grid-template-columns: 1fr; }
   .masthead { flex-wrap: wrap; }
 }
 @media (max-width: 380px) {
@@ -147,3 +144,5 @@ h3 { font-size: clamp(1.3rem, 3vw, 2.25rem); letter-spacing: -.04em; }
   .hero { min-height: 75svh; }
   .skill-grid { grid-template-columns: 1fr; }
 }
+
+.featured > div { max-width: 52rem; }
