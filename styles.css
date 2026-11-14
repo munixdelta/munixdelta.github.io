@@ -234,7 +234,6 @@ body { isolation: isolate; }
 @media (max-width: 620px) { .contact { grid-template-columns: 1fr; } }
 
 .project-grid, .credential-grid { gap: clamp(.85rem, 2vw, 1.6rem); }
-.project-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .project-card, .credential {
   overflow: hidden;
   padding: 0;
@@ -251,7 +250,7 @@ body { isolation: isolate; }
 .project-copy > a:last-child, .project-copy > .actions:last-child { margin-top: auto; padding-top: .8rem; }
 .project-copy .tags { padding-top: .7rem; border-top: 1px solid var(--line); }
 .project-media { position: relative; background: #080a10; border-bottom: 1px solid #353347; }
-.project-media .project-preview { margin: 0; border: 0; border-radius: 0; height: auto; aspect-ratio: 16 / 10; object-fit: contain; }
+.project-media .project-preview { margin: 0; border: 0; border-radius: 0; height: auto; aspect-ratio: 16 / 9; object-fit: contain; }
 .project-media .video-toggle { position: absolute; right: .45rem; bottom: .45rem; margin: 0; font-size: .72rem; }
 .credential-grid { max-width: none; }
 .credential .certificate-image { border-radius: 0; border-bottom: 1px solid #353347; }
@@ -267,10 +266,10 @@ body { isolation: isolate; }
 .skill-row li { border: 0; background: transparent; padding: 0; }
 .skill-row li + li::before { content: "·"; margin-inline: .25rem .8rem; color: #a894e5; }
 @media (max-width: 950px) {
-  .project-grid, .credential-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .credential-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 620px) {
-  .project-grid, .credential-grid, .skill-row { grid-template-columns: 1fr; }
+  .credential-grid, .skill-row { grid-template-columns: 1fr; }
 }
 
 .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -354,8 +353,3 @@ body { isolation: isolate; }
 .tech-icon { display: inline-grid; place-items: center; width: 1.35rem; height: 1.35rem; flex: none; object-fit: contain; }
 .tech-icon[src$="aws.svg"] { background: #e7edf1; border-radius: .2rem; padding: .12rem; }
 .tech-symbol { color: #91e6df; font: 700 1.1rem/1 system-ui, sans-serif; }
-@media (min-width: 980px) {
-  .project-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-  .project-grid > .project-card { grid-column: span 2; }
-  .project-grid > .project-card:nth-last-child(-n+2) { grid-column: span 3; }
-}
