@@ -339,3 +339,23 @@ body { isolation: isolate; }
   .masthead nav { row-gap: .3rem; }
   .masthead nav a { font-size: .62rem; }
 }
+
+#about-title, #contact-title { font-size: clamp(2.5rem, 6vw, 5.3rem); line-height: .98; }
+#about-title span, #contact-title span { color: #bfaaff; }
+.about .portrait { border: 1px solid #75678a; box-shadow: 0 0 0 .35rem #191526, 0 0 2.5rem #a48df233; }
+.about .label { color: var(--accent); margin-bottom: .8rem; }
+.about p:not(.label) { max-width: 43ch; margin-bottom: 1.15rem; }
+.contact-actions { margin-top: 1.7rem; }
+.contact-actions a { color: #d3c8f7; text-transform: uppercase; letter-spacing: .1em; font-size: .74rem; text-decoration: none; }
+.contact-actions a:hover { color: white; }
+.skill-row ul { gap: .65rem 1.05rem; }
+.skill-row li { display: inline-flex; align-items: center; gap: .48rem; }
+.skill-row li + li::before { display: none; }
+.tech-icon { display: inline-grid; place-items: center; width: 1.35rem; height: 1.35rem; flex: none; object-fit: contain; }
+.tech-icon[src$="aws.svg"] { background: #e7edf1; border-radius: .2rem; padding: .12rem; }
+.tech-symbol { color: #91e6df; font: 700 1.1rem/1 system-ui, sans-serif; }
+@media (min-width: 980px) {
+  .project-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .project-grid > .project-card { grid-column: span 2; }
+  .project-grid > .project-card:nth-last-child(-n+2) { grid-column: span 3; }
+}
